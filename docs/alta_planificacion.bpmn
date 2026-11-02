@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="DefPatagoniaSoft" targetNamespace="https://patagoniasoft.example/tpi" exporter="Documentación TPI">
+  <bpmn:process id="ProcesoAlta" name="Alta y planificación de proyecto" isExecutable="false">
+    <bpmn:laneSet id="Roles">
+      <bpmn:lane id="com" name="Comercial">
+        <bpmn:flowNodeRef>inicio</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>registrar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>pedir</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>recibir</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>rechazar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fin_no</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="ac" name="Analista y Coordinación">
+        <bpmn:flowNodeRef>definir</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>viable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>plan</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="sis" name="Sistema">
+        <bpmn:flowNodeRef>validar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>datos</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>guardar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fin</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="inicio" name="Solicitud recibida">
+      <bpmn:outgoing>f1</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MensajeInicio" />
+    </bpmn:startEvent>
+    <bpmn:userTask id="registrar" name="Registrar cliente y solicitud">
+      <bpmn:incoming>f1</bpmn:incoming>
+      <bpmn:outgoing>f2</bpmn:outgoing>
+      <bpmn:incoming>f6</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="validar" name="Validar datos y cliente">
+      <bpmn:incoming>f2</bpmn:incoming>
+      <bpmn:outgoing>f3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="datos" name="¿Datos completos?">
+      <bpmn:incoming>f3</bpmn:incoming>
+      <bpmn:outgoing>f4</bpmn:outgoing>
+      <bpmn:outgoing>f7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sendTask id="pedir" name="Solicitar aclaración">
+      <bpmn:incoming>f4</bpmn:incoming>
+      <bpmn:outgoing>f5</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:receiveTask id="recibir" name="Recibir aclaración">
+      <bpmn:incoming>f5</bpmn:incoming>
+      <bpmn:outgoing>f6</bpmn:outgoing>
+    </bpmn:receiveTask>
+    <bpmn:userTask id="definir" name="Definir alcance y requerimientos">
+      <bpmn:incoming>f7</bpmn:incoming>
+      <bpmn:outgoing>f8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="viable" name="¿Proyecto viable?">
+      <bpmn:incoming>f8</bpmn:incoming>
+      <bpmn:outgoing>f9</bpmn:outgoing>
+      <bpmn:outgoing>f11</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sendTask id="rechazar" name="Comunicar inviabilidad">
+      <bpmn:incoming>f9</bpmn:incoming>
+      <bpmn:outgoing>f10</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="fin_no" name="Solicitud no aceptada">
+      <bpmn:incoming>f10</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="plan" name="Planificar tareas responsables y fechas">
+      <bpmn:incoming>f11</bpmn:incoming>
+      <bpmn:outgoing>f12</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="guardar" name="Guardar proyecto y plan">
+      <bpmn:incoming>f12</bpmn:incoming>
+      <bpmn:outgoing>f13</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="fin" name="Proyecto planificado">
+      <bpmn:incoming>f13</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="f1" sourceRef="inicio" targetRef="registrar" />
+    <bpmn:sequenceFlow id="f2" sourceRef="registrar" targetRef="validar" />
+    <bpmn:sequenceFlow id="f3" sourceRef="validar" targetRef="datos" />
+    <bpmn:sequenceFlow id="f4" sourceRef="datos" targetRef="pedir" name="No" />
+    <bpmn:sequenceFlow id="f5" sourceRef="pedir" targetRef="recibir" />
+    <bpmn:sequenceFlow id="f6" sourceRef="recibir" targetRef="registrar" />
+    <bpmn:sequenceFlow id="f7" sourceRef="datos" targetRef="definir" name="Sí" />
+    <bpmn:sequenceFlow id="f8" sourceRef="definir" targetRef="viable" />
+    <bpmn:sequenceFlow id="f9" sourceRef="viable" targetRef="rechazar" name="No" />
+    <bpmn:sequenceFlow id="f10" sourceRef="rechazar" targetRef="fin_no" />
+    <bpmn:sequenceFlow id="f11" sourceRef="viable" targetRef="plan" name="Sí" />
+    <bpmn:sequenceFlow id="f12" sourceRef="plan" targetRef="guardar" />
+    <bpmn:sequenceFlow id="f13" sourceRef="guardar" targetRef="fin" />
+  </bpmn:process>
+  <bpmn:collaboration id="Colaboracion">
+    <bpmn:participant id="Cliente" name="Cliente" />
+    <bpmn:participant id="Empresa" name="PatagoniaSoft SRL" processRef="ProcesoAlta" />
+    <bpmn:messageFlow id="m1" sourceRef="Cliente" targetRef="inicio" name="Solicitud" />
+    <bpmn:messageFlow id="m2" sourceRef="pedir" targetRef="Cliente" name="Pedido de aclaración" />
+    <bpmn:messageFlow id="m3" sourceRef="Cliente" targetRef="recibir" name="Aclaración" />
+    <bpmn:messageFlow id="m4" sourceRef="rechazar" targetRef="Cliente" name="Decisión" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="VistaAlta">
+    <bpmndi:BPMNPlane id="PlanoAlta" bpmnElement="Colaboracion">
+      <bpmndi:BPMNShape id="Shape_Cliente" bpmnElement="Cliente" isHorizontal="true">
+        <dc:Bounds x="50" y="30" width="1480" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Empresa" bpmnElement="Empresa" isHorizontal="true">
+        <dc:Bounds x="50" y="150" width="1480" height="570" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_com" bpmnElement="com" isHorizontal="true">
+        <dc:Bounds x="85" y="150" width="1445" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_ac" bpmnElement="ac" isHorizontal="true">
+        <dc:Bounds x="85" y="340" width="1445" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_sis" bpmnElement="sis" isHorizontal="true">
+        <dc:Bounds x="85" y="530" width="1445" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_inicio" bpmnElement="inicio">
+        <dc:Bounds x="120" y="230" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_registrar" bpmnElement="registrar">
+        <dc:Bounds x="205" y="210" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_validar" bpmnElement="validar">
+        <dc:Bounds x="405" y="565" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_datos" bpmnElement="datos" isMarkerVisible="true">
+        <dc:Bounds x="600" y="577" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_pedir" bpmnElement="pedir">
+        <dc:Bounds x="540" y="210" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_recibir" bpmnElement="recibir">
+        <dc:Bounds x="740" y="210" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_definir" bpmnElement="definir">
+        <dc:Bounds x="720" y="390" width="165" height="78" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_viable" bpmnElement="viable" isMarkerVisible="true">
+        <dc:Bounds x="935" y="405" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_rechazar" bpmnElement="rechazar">
+        <dc:Bounds x="935" y="210" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fin_no" bpmnElement="fin_no">
+        <dc:Bounds x="1130" y="230" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_plan" bpmnElement="plan">
+        <dc:Bounds x="1040" y="390" width="165" height="78" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_guardar" bpmnElement="guardar">
+        <dc:Bounds x="1245" y="565" width="150" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_fin" bpmnElement="fin">
+        <dc:Bounds x="1440" y="584" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_f1" bpmnElement="f1">
+        <di:waypoint x="154" y="247" />
+        <di:waypoint x="205" y="247" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f2" bpmnElement="f2">
+        <di:waypoint x="355" y="247" />
+        <di:waypoint x="380" y="247" />
+        <di:waypoint x="380" y="601" />
+        <di:waypoint x="405" y="601" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f3" bpmnElement="f3">
+        <di:waypoint x="555" y="601" />
+        <di:waypoint x="600" y="601" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f4" bpmnElement="f4">
+        <di:waypoint x="624" y="577" />
+        <di:waypoint x="624" y="510" />
+        <di:waypoint x="615" y="510" />
+        <di:waypoint x="615" y="282" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f5" bpmnElement="f5">
+        <di:waypoint x="690" y="246" />
+        <di:waypoint x="740" y="246" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f6" bpmnElement="f6">
+        <di:waypoint x="815" y="210" />
+        <di:waypoint x="815" y="170" />
+        <di:waypoint x="280" y="170" />
+        <di:waypoint x="280" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f7" bpmnElement="f7">
+        <di:waypoint x="648" y="601" />
+        <di:waypoint x="690" y="601" />
+        <di:waypoint x="690" y="429" />
+        <di:waypoint x="720" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f8" bpmnElement="f8">
+        <di:waypoint x="885" y="429" />
+        <di:waypoint x="935" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f9" bpmnElement="f9">
+        <di:waypoint x="959" y="405" />
+        <di:waypoint x="959" y="320" />
+        <di:waypoint x="1010" y="320" />
+        <di:waypoint x="1010" y="282" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f10" bpmnElement="f10">
+        <di:waypoint x="1085" y="247" />
+        <di:waypoint x="1130" y="247" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f11" bpmnElement="f11">
+        <di:waypoint x="983" y="429" />
+        <di:waypoint x="1040" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f12" bpmnElement="f12">
+        <di:waypoint x="1205" y="429" />
+        <di:waypoint x="1220" y="429" />
+        <di:waypoint x="1220" y="601" />
+        <di:waypoint x="1245" y="601" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f13" bpmnElement="f13">
+        <di:waypoint x="1395" y="601" />
+        <di:waypoint x="1440" y="601" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_m1" bpmnElement="m1">
+        <di:waypoint x="137" y="90" />
+        <di:waypoint x="137" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_m2" bpmnElement="m2">
+        <di:waypoint x="570" y="210" />
+        <di:waypoint x="570" y="90" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_m3" bpmnElement="m3">
+        <di:waypoint x="850" y="90" />
+        <di:waypoint x="850" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_m4" bpmnElement="m4">
+        <di:waypoint x="1050" y="210" />
+        <di:waypoint x="1050" y="90" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

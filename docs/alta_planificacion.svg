@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="800" viewBox="0 0 1580 800">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L9 4 L0 8Z" fill="#26384a"/></marker><marker id="msg" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M1 1 L11 5 L1 9" fill="none" stroke="#26384a" stroke-width="1.5"/></marker></defs>
+<rect width="1580" height="800" fill="white"/>
+<rect x="50" y="30" width="1480" height="60" fill="#eef3f6" stroke="#26384a" stroke-width="2"/>
+<text x="790" y="68" font-family="DejaVu Sans,sans-serif" font-size="21" text-anchor="middle" font-weight="normal" fill="#182633">Cliente como participante externo</text>
+<rect x="50" y="150" width="1480" height="570" fill="white" stroke="#26384a" stroke-width="2"/>
+<text x="72" y="435" transform="rotate(-90 72 435)" font-family="DejaVu Sans" font-size="19" text-anchor="middle">PatagoniaSoft SRL</text>
+<rect x="85" y="150" width="1445" height="190" fill="none" stroke="#8996a1"/>
+<text x="102" y="173" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#182633">Comercial</text>
+<rect x="85" y="340" width="1445" height="190" fill="none" stroke="#8996a1"/>
+<text x="102" y="363" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#182633">Analista y Coordinación</text>
+<rect x="85" y="530" width="1445" height="190" fill="none" stroke="#8996a1"/>
+<text x="102" y="553" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#182633">Sistema</text>
+<polyline points="154,247 205,247" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="355,247 380,247 380,601 405,601" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="555,601 600,601" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="624,577 624,510 615,510 615,282" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="639" y="567" font-family="DejaVu Sans,sans-serif" font-size="17" text-anchor="start" font-weight="normal" fill="#182633">No</text>
+<polyline points="690,246 740,246" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="815,210 815,170 280,170 280,210" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="648,601 690,601 690,429 720,429" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="663" y="591" font-family="DejaVu Sans,sans-serif" font-size="17" text-anchor="start" font-weight="normal" fill="#182633">Sí</text>
+<polyline points="885,429 935,429" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="959,405 959,320 1010,320 1010,282" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="974" y="395" font-family="DejaVu Sans,sans-serif" font-size="17" text-anchor="start" font-weight="normal" fill="#182633">No</text>
+<polyline points="1085,247 1130,247" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="983,429 1040,429" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="998" y="419" font-family="DejaVu Sans,sans-serif" font-size="17" text-anchor="start" font-weight="normal" fill="#182633">Sí</text>
+<polyline points="1205,429 1220,429 1220,601 1245,601" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="1395,601 1440,601" fill="none" stroke="#26384a" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="137,90 137,230" fill="none" stroke="#26384a" stroke-dasharray="8 5" stroke-width="2" marker-end="url(#msg)"/>
+<circle cx="137" cy="90" r="4" fill="white" stroke="#26384a"/>
+<polyline points="570,210 570,90" fill="none" stroke="#26384a" stroke-dasharray="8 5" stroke-width="2" marker-end="url(#msg)"/>
+<circle cx="570" cy="210" r="4" fill="white" stroke="#26384a"/>
+<polyline points="850,90 850,210" fill="none" stroke="#26384a" stroke-dasharray="8 5" stroke-width="2" marker-end="url(#msg)"/>
+<circle cx="850" cy="90" r="4" fill="white" stroke="#26384a"/>
+<polyline points="1050,210 1050,90" fill="none" stroke="#26384a" stroke-dasharray="8 5" stroke-width="2" marker-end="url(#msg)"/>
+<circle cx="1050" cy="210" r="4" fill="white" stroke="#26384a"/>
+<circle cx="137.0" cy="247.0" r="16" fill="white" stroke="#182633" stroke-width="2"/>
+<rect x="127" y="241" width="20" height="12" fill="none" stroke="#182633"/><path d="M127 241l10 7 10 -7" fill="none" stroke="#182633"/>
+<text x="137.0" y="287" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Solicitud recibida</text>
+<rect x="205" y="210" width="150" height="72" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<circle cx="219" cy="220" r="4" fill="none" stroke="#182633"/><path d="M213 234v-6q6 -7 12 0v6M216 233v5M222 233v5" fill="none" stroke="#182633" stroke-width="1.5"/>
+<text x="280.0" y="240" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Registrar cliente y</text>
+<text x="280.0" y="259" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">solicitud</text>
+<rect x="405" y="565" width="150" height="72" rx="12" fill="#edf4f8" stroke="#182633" stroke-width="2"/>
+<polygon points="430.0,581.0 426.8654969628226,582.3656322541129 426.467156727579,583.6787840265556 428.31469612302544,586.555702330196 427.0710678118655,588.0710678118654 423.88899163113723,586.8202872861178 422.6787840265556,587.467156727579 421.9509032201613,590.8078528040323 420.0,591.0 418.6343677458871,587.8654969628226 417.3212159734444,587.467156727579 414.444297669804,589.3146961230254 412.9289321881345,588.0710678118655 414.17971271388217,584.8889916311372 413.532843272421,583.6787840265556 410.1921471959677,582.9509032201613 410.0,581.0 413.1345030371774,579.6343677458871 413.532843272421,578.3212159734444 411.68530387697456,575.444297669804 412.9289321881345,573.9289321881346 416.11100836886277,575.1797127138822 417.3212159734444,574.532843272421 418.0490967798387,571.1921471959677 420.0,571.0 421.3656322541129,574.1345030371774 422.6787840265556,574.532843272421 425.555702330196,572.6853038769746 427.0710678118655,573.9289321881345 425.82028728611783,577.1110083688628 426.467156727579,578.3212159734444 429.8078528040323,579.0490967798387" fill="white" stroke="#182633"/><circle cx="420" cy="581" r="3" fill="white" stroke="#182633"/>
+<text x="480.0" y="595" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Validar datos y</text>
+<text x="480.0" y="614" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">cliente</text>
+<polygon points="624.0,577 648,601.0 624.0,625 600,601.0" fill="white" stroke="#182633" stroke-width="2"/>
+<text x="624.0" y="608.0" font-family="DejaVu Sans,sans-serif" font-size="23" text-anchor="middle" font-weight="normal" fill="#182633">X</text>
+<text x="624.0" y="649" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">¿Datos completos?</text>
+<rect x="540" y="210" width="150" height="72" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<rect x="546" y="217" width="19" height="13" fill="#182633" stroke="#182633"/><path d="M546 217l9.5 7 9.5 -7" fill="none" stroke="white"/>
+<text x="615.0" y="240" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Solicitar</text>
+<text x="615.0" y="259" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">aclaración</text>
+<rect x="740" y="210" width="150" height="72" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<rect x="746" y="217" width="19" height="13" fill="white" stroke="#182633"/><path d="M746 217l9.5 7 9.5 -7" fill="none" stroke="#182633"/>
+<text x="815.0" y="240" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Recibir aclaración</text>
+<rect x="720" y="390" width="165" height="78" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<circle cx="734" cy="400" r="4" fill="none" stroke="#182633"/><path d="M728 414v-6q6 -7 12 0v6M731 413v5M737 413v5" fill="none" stroke="#182633" stroke-width="1.5"/>
+<text x="802.5" y="420" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Definir alcance y</text>
+<text x="802.5" y="439" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">requerimientos</text>
+<polygon points="959.0,405 983,429.0 959.0,453 935,429.0" fill="white" stroke="#182633" stroke-width="2"/>
+<text x="959.0" y="436.0" font-family="DejaVu Sans,sans-serif" font-size="23" text-anchor="middle" font-weight="normal" fill="#182633">X</text>
+<text x="959.0" y="477" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">¿Proyecto viable?</text>
+<rect x="935" y="210" width="150" height="72" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<rect x="941" y="217" width="19" height="13" fill="#182633" stroke="#182633"/><path d="M941 217l9.5 7 9.5 -7" fill="none" stroke="white"/>
+<text x="1010.0" y="240" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Comunicar</text>
+<text x="1010.0" y="259" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">inviabilidad</text>
+<circle cx="1147.0" cy="247.0" r="16" fill="white" stroke="#182633" stroke-width="4"/>
+<text x="1147.0" y="287" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Solicitud no</text>
+<text x="1147.0" y="309" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">aceptada</text>
+<rect x="1040" y="390" width="165" height="78" rx="12" fill="white" stroke="#182633" stroke-width="2"/>
+<circle cx="1054" cy="400" r="4" fill="none" stroke="#182633"/><path d="M1048 414v-6q6 -7 12 0v6M1051 413v5M1057 413v5" fill="none" stroke="#182633" stroke-width="1.5"/>
+<text x="1122.5" y="420" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Planificar tareas</text>
+<text x="1122.5" y="439" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">responsables y</text>
+<text x="1122.5" y="458" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">fechas</text>
+<rect x="1245" y="565" width="150" height="72" rx="12" fill="#edf4f8" stroke="#182633" stroke-width="2"/>
+<polygon points="1270.0,581.0 1266.8654969628226,582.3656322541129 1266.467156727579,583.6787840265556 1268.3146961230254,586.555702330196 1267.0710678118655,588.0710678118654 1263.8889916311373,586.8202872861178 1262.6787840265556,587.467156727579 1261.9509032201613,590.8078528040323 1260.0,591.0 1258.6343677458872,587.8654969628226 1257.3212159734444,587.467156727579 1254.444297669804,589.3146961230254 1252.9289321881345,588.0710678118655 1254.1797127138823,584.8889916311372 1253.532843272421,583.6787840265556 1250.1921471959677,582.9509032201613 1250.0,581.0 1253.1345030371774,579.6343677458871 1253.532843272421,578.3212159734444 1251.6853038769746,575.444297669804 1252.9289321881345,573.9289321881346 1256.1110083688627,575.1797127138822 1257.3212159734444,574.532843272421 1258.0490967798387,571.1921471959677 1260.0,571.0 1261.3656322541128,574.1345030371774 1262.6787840265556,574.532843272421 1265.555702330196,572.6853038769746 1267.0710678118655,573.9289321881345 1265.8202872861177,577.1110083688628 1266.467156727579,578.3212159734444 1269.8078528040323,579.0490967798387" fill="white" stroke="#182633"/><circle cx="1260" cy="581" r="3" fill="white" stroke="#182633"/>
+<text x="1320.0" y="595" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Guardar proyecto y</text>
+<text x="1320.0" y="614" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">plan</text>
+<circle cx="1457.0" cy="601.0" r="16" fill="white" stroke="#182633" stroke-width="4"/>
+<text x="1457.0" y="641" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">Proyecto</text>
+<text x="1457.0" y="663" font-family="DejaVu Sans,sans-serif" font-size="16" text-anchor="middle" font-weight="normal" fill="#182633">planificado</text>
+<text x="50" y="766" font-family="DejaVu Sans,sans-serif" font-size="18" text-anchor="start" font-weight="normal" fill="#182633">Persona: tarea de usuario   Engranaje: servicio   Sobre: envío o recepción   Línea continua: secuencia   Discontinua: mensaje</text>
+</svg>
